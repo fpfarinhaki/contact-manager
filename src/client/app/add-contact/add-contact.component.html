@@ -1,0 +1,44 @@
+<form class="ms-5 me-5" #contactForm="ngForm" (submit)="onSubmit(contactForm)" [class.loading]="loading">
+    <div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="newContact != null">
+       <h3 class="alert-heading">
+            <i class="bi bi-check success"></i>
+            Contact Added!
+        </h3>
+       <p>Name: {{newContact.name}}</p>
+       <button type="button" class="btn-close" data-bs-dismiss="alert" (click)="newContact = null"></button>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-2">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" placeholder="First Name" class="form-control" name="firstName" ngModel/>
+        </div>
+        <div class="col-md-6 mb-2">
+            <label for="lastName">First Name</label>
+            <input type="text" id="lastName" placeholder="Last Name" class="form-control" name="lastName" ngModel/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-2">
+            <label for="address">Address</label>
+            <input type="text" id="address" placeholder="Address" class="form-control" name="address" ngModel/>
+        </div>
+    
+        <div class="col-md-1 mb-2">
+            <label for="areaCode">Area Code</label>
+            <input type="text" id="areaCode" maxlength="3" placeholder="(###)" class="form-control" name="areaCode" ngModel/>
+        </div>
+        <div class="col-md-5 mb-2">
+            <label for="phone">Phone number</label>
+            <input type="text" id="phone" maxLength="8" placeholder="###-####" class="form-control" name="phone" ngModel/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="photoURL">Photo URL</label>
+            <input type="text" id="photoURL" placeholder="http://cdn.com/profile.jpg" class="form-control" name="photo" ngModel/>
+        </div>
+    </div>
+    <div class="float-end">
+        <button type="submit" class="btn btn-primary float-end me-1 mt-2">Save</button>
+    </div>
+</form>

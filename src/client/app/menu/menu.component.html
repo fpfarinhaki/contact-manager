@@ -1,0 +1,19 @@
+<header> 
+    <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+            <a routerLink="contacts" class="navbar-brand d-flex align-items-center">
+                <i class="bi bi-people-fill pe-4"></i>
+                <strong>Contact Manager</strong>
+            </a>
+            <button class="btn btn-secondary my-2" (click)="authenticate()">
+                {{auth.isLoggedIn() ? 'Logout' : 'Login'}}
+            </button>
+            <div class="container"> 
+                <button [routerLink]="['/new']" class="btn btn-secondary my-2" *ngIf="auth.isLoggedIn()">
+                    <i class="bi bi-person-plus-fill"></i>
+                    Add Contact
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
